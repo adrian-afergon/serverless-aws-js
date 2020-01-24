@@ -1,0 +1,24 @@
+{
+  "name": "aws-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adrian-afergon/serverless-aws-js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adrian-afergon/serverless-aws-js/issues"
+  },
+  "homepage": "https://github.com/adrian-afergon/serverless-aws-js#readme",
+  "devDependencies": {
+    "aws-sdk": "^2.609.0",
+    "aws-sdk-mock": "^5.0.0",
+    "jest": "^25.1.0"
+  }
+}

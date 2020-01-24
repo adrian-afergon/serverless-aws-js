@@ -2,11 +2,14 @@
 
 const AWS = require('aws-sdk');
 
-const dynamoDb = new AWS.DynamoDB.DocumentClient();
+const TABLE_NAME = process.env.DYNAMODB_TABLE ? process.env.DYNAMODB_TABLE: 'VideoDB'
 
 module.exports.get = async (videoId) => {
+
+    const dynamoDb = new AWS.DynamoDB.DocumentClient();
+
     const params = {
-        TableName: process.env.DYNAMODB_TABLE,
+        TableName: TABLE_NAME,
         Key: {
             id: videoId,
         },
@@ -16,6 +19,6 @@ module.exports.get = async (videoId) => {
         const result = await dynamoDb.get(params).promise();
         return result.Item;
     } catch (error) {
-        throw new Error(error);
+        throw error;
     }
 };
